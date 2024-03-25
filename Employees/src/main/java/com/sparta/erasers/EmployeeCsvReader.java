@@ -29,6 +29,10 @@ public class EmployeeCsvReader {
         }
         System.out.println(csvReader.readFileLines("employees_short.csv").size());
 
+        ArrayList<Employee> empArrList = new ArrayList<Employee>;
+        empArrList = csvReader.readEmployees();
+        System.out.println(empArrList[0].getName());
+
 
     }
 
@@ -64,6 +68,17 @@ public class EmployeeCsvReader {
 
 
     // creates an ArrayList of Employee objects from information stored in a .csv file.
-//    public ArrayList<Employee> readEmployees(String fileName) {...}
+    public ArrayList<Employee> readEmployees(String fileName) {
+        ArrayList<Employee> empArrList = new ArrayList<Employee>;
+        ArrayList<String> lineArrList = new ArrayList<String>;
+        lineArrList = readFileLines(filename);
+
+        for(String s : lineArrList) {
+            Employee e = createEmployee(s);
+            empArrList.add(e);
+        }
+
+        return empArrList;
+    }
 
 }
