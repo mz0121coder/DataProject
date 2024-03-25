@@ -10,7 +10,12 @@ public class Employee {
     private String gender;
     private String hire_date;
 
-    public Employee(String emp_no, String birth_date, String first_name, String last_name, String email, String gender, String hire_date) {
+    private String salary;
+
+    private String middle_initial;
+    private String name_prefix;
+
+    public Employee(String emp_no, String name_prefix, String first_name, String middle_initial, String last_name, String gender, String email, String birth_date, String hire_date, String salary) {
         this.emp_no = emp_no;
         this.birth_date = birth_date;
         this.first_name = first_name;
@@ -18,6 +23,9 @@ public class Employee {
         this.email = email;
         this.gender = gender;
         this.hire_date = hire_date;
+        this.name_prefix = name_prefix;
+        this.middle_initial = middle_initial;
+        this.salary = salary;
     }
 
     public String getEmp_no() {
@@ -47,5 +55,18 @@ public class Employee {
     public String getHire_date() {
         return hire_date;
     }
+
+    public String getName_prefix() {
+        return name_prefix;
+    }
+
+    public String getSalary() {
+        return salary;
+    }
+
+    public String getMiddle_initial() {
+        return middle_initial;
+    }
+
 }
 
