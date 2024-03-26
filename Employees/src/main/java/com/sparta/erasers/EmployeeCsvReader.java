@@ -52,7 +52,8 @@ public class EmployeeCsvReader {
         attributes = line.split(",");
 
         Employee employee = new Employee(attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], attributes[7], attributes[8], attributes[9]);
-        LOGGER.log(Level.INFO, "👔Created employee No: " + employee.getEmp_no());
+        //LOGGER.log(Level.INFO, "👔Created employee No: " + employee.getEmp_no());
+        LOGGER.log(Level.INFO, String.format("👔Created employee - \nNo: %s \nTitle: %s\nFirst Name: %s\nMiddle Initial: %s\nLast Name: %s\nGender: %s\nEmail: %s\nBirth Date: %s\nHire date: %s\nSalary: %s", employee.getEmp_no(), employee.getName_prefix(), employee.getFirst_name(), employee.getMiddle_initial(), employee.getLast_name(), employee.getGender(), employee.getEmail(), employee.getBirth_date(), employee.getHire_date(), employee.getSalary()));
         return employee;
     }
     // The JUnit test should validate that the Employee object contains the correct information
