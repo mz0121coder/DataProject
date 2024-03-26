@@ -7,12 +7,17 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class EmployeeCsvReader {
     private static final Logger LOGGER = Logger.getLogger("EmployeeCsvReaderLogger");
     public static void main(String[] args) {
-        // LOGGER
+        //LOGGER
+        LoggerUTIL.setUpHandlers(LOGGER);
+        LoggerUTIL.setLoggerLevel(LOGGER, Level.ALL);
+        LoggerUTIL.addFileHandler(LOGGER);
+        LoggerUTIL.addConsoleHandler(LOGGER);
 
 
     // parses a String of Employee information, and constructs and returns an Employee object from it
@@ -46,6 +51,7 @@ public class EmployeeCsvReader {
         attributes = line.split(",");
 
         Employee employee = new Employee(attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], attributes[7], attributes[8], attributes[9]);
+        LOGGER.log(Level.INFO, "Created employee");
         return employee;
     }
     // The JUnit test should validate that the Employee object contains the correct information
