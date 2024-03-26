@@ -1,4 +1,6 @@
-package com.sparta.erasers;
+package com.sparta.erasers.utils;
+
+import com.sparta.erasers.CustomFormatter;
 
 import java.io.IOException;
 import java.text.Format;

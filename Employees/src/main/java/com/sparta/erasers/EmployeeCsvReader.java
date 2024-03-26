@@ -1,11 +1,13 @@
 package com.sparta.erasers;
 
+import com.sparta.erasers.utils.DatePharserUTIL;
+import com.sparta.erasers.utils.LoggerUTIL;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,6 +52,9 @@ public class EmployeeCsvReader {
 
         String[] attributes;
         attributes = line.split(",");
+
+        DatePharserUTIL dataPharser = new DatePharserUTIL();
+
 
         Employee employee = new Employee(attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], attributes[7], attributes[8], attributes[9]);
         //LOGGER.log(Level.INFO, "👔Created employee No: " + employee.getEmp_no());
