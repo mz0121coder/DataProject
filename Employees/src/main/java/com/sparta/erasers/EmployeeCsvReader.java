@@ -41,6 +41,7 @@ public class EmployeeCsvReader {
         ArrayList<Employee> empArrList = new ArrayList<>();
         empArrList = csvReader.readEmployees("employees_short.csv");
         System.out.println(empArrList.get(1).getEmp_no());
+        System.out.println(empArrList.size());
 
 
     }
@@ -51,7 +52,7 @@ public class EmployeeCsvReader {
         attributes = line.split(",");
 
         Employee employee = new Employee(attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], attributes[7], attributes[8], attributes[9]);
-        LOGGER.log(Level.INFO, "Created employee");
+        LOGGER.log(Level.INFO, "Created employee No: " + employee.getEmp_no());
         return employee;
     }
     // The JUnit test should validate that the Employee object contains the correct information
@@ -67,9 +68,12 @@ public class EmployeeCsvReader {
         try {
             reader = Files.newBufferedReader(input);
             reader.skip(107);
+            LOGGER.log(Level.INFO, "🟢 Started reading lines from file...");
             for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+                LOGGER.log(Level.FINE, "👀Read Line - " + line);
                 fileLines.add(line);
             }
+            LOGGER.log(Level.INFO, "🔴 Finished Reading.");
         } catch (IOException e) {
             System.out.println("File not found.");
         }
@@ -82,12 +86,13 @@ public class EmployeeCsvReader {
         ArrayList<Employee> empArrList = new ArrayList<>();
         ArrayList<String> lineArrList = new ArrayList<>();
         lineArrList = readFileLines(fileName);
-
+        LOGGER.log(Level.INFO, "🟢Starting adding employees to employee list...");
         for(String s : lineArrList) {
             Employee e = createEmployee(s);
             empArrList.add(e);
+            LOGGER.log(Level.FINE, "👷‍♂️Added Employee: " + e.getEmp_no());
         }
-
+        LOGGER.log(Level.INFO, "🔴Done with adding employees to employee list.");
         return empArrList;
     }
 
