@@ -7,9 +7,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class EmployeeCsvReader {
+    private static final Logger LOGGER = Logger.getLogger("EmployeeCsvReaderLogger");
     public static void main(String[] args) {
+        // LOGGER
+
 
     // parses a String of Employee information, and constructs and returns an Employee object from it
 
@@ -80,4 +84,7 @@ public class EmployeeCsvReader {
 
         return empArrList;
     }
+
+    // Logger
+
 }
