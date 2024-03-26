@@ -1,21 +1,23 @@
 package com.sparta.erasers;
 
+import java.time.LocalDate;
+
 public class Employee {
     // SIYU HERE
     private String emp_no;
-    private String birth_date;
+    private LocalDate birth_date;
     private String first_name;
     private String last_name;
     private String email;
     private String gender;
-    private String hire_date;
+    private LocalDate hire_date;
 
     private String salary;
 
     private String middle_initial;
     private String name_prefix;
 
-    public Employee(String emp_no, String name_prefix, String first_name, String middle_initial, String last_name, String gender, String email, String birth_date, String hire_date, String salary) {
+    public Employee(String emp_no, String name_prefix, String first_name, String middle_initial, String last_name, String gender, String email, LocalDate birth_date, LocalDate hire_date, String salary) {
         this.emp_no = emp_no;
         this.birth_date = birth_date;
         this.first_name = first_name;
@@ -32,7 +34,7 @@ public class Employee {
         return emp_no;
     }
 
-    public String getBirth_date() {
+    public LocalDate getBirth_date() {
         return birth_date;
     }
 
@@ -52,7 +54,7 @@ public class Employee {
         return gender;
     }
 
-    public String getHire_date() {
+    public LocalDate getHire_date() {
         return hire_date;
     }
 

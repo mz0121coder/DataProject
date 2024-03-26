@@ -1,6 +1,6 @@
 package com.sparta.erasers;
 
-import com.sparta.erasers.utils.DatePharserUTIL;
+import com.sparta.erasers.utils.DateParserUTIL;
 import com.sparta.erasers.utils.LoggerUTIL;
 
 import java.io.BufferedReader;
@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -53,10 +54,11 @@ public class EmployeeCsvReader {
         String[] attributes;
         attributes = line.split(",");
 
-        DatePharserUTIL dataPharser = new DatePharserUTIL();
+        //Slightly unneeded variables (Could parse in constructor)
+        LocalDate employeeBirthDate = DateParserUTIL.parseDate(attributes[7]);
+        LocalDate employeeHireDate = DateParserUTIL.parseDate(attributes[8]);
 
-
-        Employee employee = new Employee(attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], attributes[7], attributes[8], attributes[9]);
+        Employee employee = new Employee(attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], employeeBirthDate, employeeHireDate, attributes[9]);
         //LOGGER.log(Level.INFO, "👔Created employee No: " + employee.getEmp_no());
         LOGGER.log(Level.INFO, String.format("👔Created employee - \nNo: %s \nTitle: %s\nFirst Name: %s\nMiddle Initial: %s\nLast Name: %s\nGender: %s\nEmail: %s\nBirth Date: %s\nHire date: %s\nSalary: %s", employee.getEmp_no(), employee.getName_prefix(), employee.getFirst_name(), employee.getMiddle_initial(), employee.getLast_name(), employee.getGender(), employee.getEmail(), employee.getBirth_date(), employee.getHire_date(), employee.getSalary()));
         return employee;
