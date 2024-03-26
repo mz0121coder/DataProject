@@ -52,7 +52,7 @@ public class EmployeeCsvReader {
         attributes = line.split(",");
 
         Employee employee = new Employee(attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], attributes[7], attributes[8], attributes[9]);
-        LOGGER.log(Level.INFO, "Created employee No: " + employee.getEmp_no());
+        LOGGER.log(Level.INFO, "👔Created employee No: " + employee.getEmp_no());
         return employee;
     }
     // The JUnit test should validate that the Employee object contains the correct information
@@ -68,12 +68,12 @@ public class EmployeeCsvReader {
         try {
             reader = Files.newBufferedReader(input);
             reader.skip(107);
-            LOGGER.log(Level.INFO, "🟢 Started reading lines from file...");
+            LOGGER.log(Level.INFO, "🟢Started reading lines from file...");
             for (String line = reader.readLine(); line != null; line = reader.readLine()) {
                 LOGGER.log(Level.FINE, "👀Read Line - " + line);
                 fileLines.add(line);
             }
-            LOGGER.log(Level.INFO, "🔴 Finished Reading.");
+            LOGGER.log(Level.INFO, "🔴Finished Reading.");
         } catch (IOException e) {
             System.out.println("File not found.");
         }
