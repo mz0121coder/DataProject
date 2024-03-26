@@ -1,15 +1,26 @@
 package com.sparta.erasers;
 
+import com.sparta.erasers.utils.DatePharserUTIL;
+import com.sparta.erasers.utils.LoggerUTIL;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class EmployeeCsvReader {
+    private static final Logger LOGGER = Logger.getLogger("EmployeeCsvReaderLogger");
     public static void main(String[] args) {
+        //LOGGER
+        LoggerUTIL.setUpHandlers(LOGGER);
+        LoggerUTIL.setLoggerLevel(LOGGER, Level.ALL);
+        LoggerUTIL.addFileHandler(LOGGER);
+        LoggerUTIL.addConsoleHandler(LOGGER);
+
 
     // parses a String of Employee information, and constructs and returns an Employee object from it
 
@@ -32,6 +43,7 @@ public class EmployeeCsvReader {
         ArrayList<Employee> empArrList = new ArrayList<>();
         empArrList = csvReader.readEmployees("employees_short.csv");
         System.out.println(empArrList.get(1).getEmp_no());
+        System.out.println(empArrList.size());
 
 
     }
@@ -41,7 +53,12 @@ public class EmployeeCsvReader {
         String[] attributes;
         attributes = line.split(",");
 
+        DatePharserUTIL dataPharser = new DatePharserUTIL();
+
+
         Employee employee = new Employee(attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], attributes[7], attributes[8], attributes[9]);
+        //LOGGER.log(Level.INFO, "👔Created employee No: " + employee.getEmp_no());
+        LOGGER.log(Level.INFO, String.format("👔Created employee - \nNo: %s \nTitle: %s\nFirst Name: %s\nMiddle Initial: %s\nLast Name: %s\nGender: %s\nEmail: %s\nBirth Date: %s\nHire date: %s\nSalary: %s", employee.getEmp_no(), employee.getName_prefix(), employee.getFirst_name(), employee.getMiddle_initial(), employee.getLast_name(), employee.getGender(), employee.getEmail(), employee.getBirth_date(), employee.getHire_date(), employee.getSalary()));
         return employee;
     }
     // The JUnit test should validate that the Employee object contains the correct information
@@ -57,9 +74,12 @@ public class EmployeeCsvReader {
         try {
             reader = Files.newBufferedReader(input);
             reader.skip(107);
+            LOGGER.log(Level.INFO, "🟢Started reading lines from file...");
             for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+                LOGGER.log(Level.FINE, "👀Read Line - " + line);
                 fileLines.add(line);
             }
+            LOGGER.log(Level.INFO, "🔴Finished Reading.");
         } catch (IOException e) {
             System.out.println("File not found.");
         }
@@ -72,12 +92,16 @@ public class EmployeeCsvReader {
         ArrayList<Employee> empArrList = new ArrayList<>();
         ArrayList<String> lineArrList = new ArrayList<>();
         lineArrList = readFileLines(fileName);
-
+        LOGGER.log(Level.INFO, "🟢Starting adding employees to employee list...");
         for(String s : lineArrList) {
             Employee e = createEmployee(s);
             empArrList.add(e);
+            LOGGER.log(Level.FINE, "👷‍♂️Added Employee: " + e.getEmp_no());
         }
-
+        LOGGER.log(Level.INFO, "🔴Done with adding employees to employee list.");
         return empArrList;
     }
+
+    // Logger
+
 }
