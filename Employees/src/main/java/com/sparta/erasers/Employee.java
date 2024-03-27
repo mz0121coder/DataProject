@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Employee {
     // SIYU HERE
-    private String emp_no;
+    private int emp_no;
     private LocalDate birth_date;
     private String first_name;
     private String last_name;
@@ -12,12 +12,12 @@ public class Employee {
     private String gender;
     private LocalDate hire_date;
 
-    private String salary;
+    private int salary;
 
     private String middle_initial;
     private String name_prefix;
 
-    public Employee(String emp_no, String name_prefix, String first_name, String middle_initial, String last_name, String gender, String email, LocalDate birth_date, LocalDate hire_date, String salary) {
+    public Employee(int emp_no, String name_prefix, String first_name, String middle_initial, String last_name, String gender, String email, LocalDate birth_date, LocalDate hire_date, int salary) {
         this.emp_no = emp_no;
         this.birth_date = birth_date;
         this.first_name = first_name;
@@ -30,7 +30,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String getEmp_no() {
+    public int getEmp_no() {
         return emp_no;
     }
 
@@ -62,7 +62,7 @@ public class Employee {
         return name_prefix;
     }
 
-    public String getSalary() {
+    public int getSalary() {
         return salary;
     }
 
