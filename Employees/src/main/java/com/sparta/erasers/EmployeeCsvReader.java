@@ -58,7 +58,12 @@ public class EmployeeCsvReader {
         LocalDate employeeBirthDate = DateParserUTIL.parseDate(attributes[7]);
         LocalDate employeeHireDate = DateParserUTIL.parseDate(attributes[8]);
 
-        Employee employee = new Employee(attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], employeeBirthDate, employeeHireDate, attributes[9]);
+        int employeeNumber1 = Integer.parseInt(attributes[0]);
+        int employeeSalary1 = Integer.parseInt(attributes[9]);
+
+
+
+        Employee employee = new Employee(employeeNumber1, attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], employeeBirthDate, employeeHireDate, employeeSalary1);
         //LOGGER.log(Level.INFO, "👔Created employee No: " + employee.getEmp_no());
         LOGGER.log(Level.INFO, String.format("👔Created employee - \nNo: %s \nTitle: %s\nFirst Name: %s\nMiddle Initial: %s\nLast Name: %s\nGender: %s\nEmail: %s\nBirth Date: %s\nHire date: %s\nSalary: %s", employee.getEmp_no(), employee.getName_prefix(), employee.getFirst_name(), employee.getMiddle_initial(), employee.getLast_name(), employee.getGender(), employee.getEmail(), employee.getBirth_date(), employee.getHire_date(), employee.getSalary()));
         return employee;
