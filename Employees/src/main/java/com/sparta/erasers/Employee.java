@@ -3,7 +3,6 @@ package com.sparta.erasers;
 import java.time.LocalDate;
 
 public class Employee {
-    // SIYU HERE
     private int emp_no;
     private LocalDate birth_date;
     private String first_name;

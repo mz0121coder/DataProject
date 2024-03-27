@@ -30,11 +30,27 @@ class EmployeeTest {
     }
 
     @Test
+    @DisplayName("check if first name is returned")
     void getFirst_name() {
+        Assertions.assertEquals(employee.getFirst_name(), "Serafina");
     }
 
     @Test
+    @DisplayName("check if first name is not null")
+    void checkFirstNameIsNotNull() {
+        Assertions.assertNotNull(employee.getFirst_name());
+    }
+
+    @Test
+    @DisplayName("check if second name is returned")
     void getLast_name() {
+        Assertions.assertEquals(employee.getLast_name(), "Bumgarner");
+    }
+
+    @Test
+    @DisplayName("check if second name is not null")
+    void checkSecondNameIsNotNull() {
+        Assertions.assertNotNull(employee.getLast_name());
     }
 
     @Test
@@ -58,6 +74,14 @@ class EmployeeTest {
     }
 
     @Test
+    @DisplayName("Check if returns correct Initial")
     void getMiddle_initial() {
+        Assertions.assertEquals(employee.getMiddle_initial(), "I");
+    }
+
+    @Test
+    @DisplayName("Check if Initial is only 1 character")
+    void middleInitialIsOnlyOneChar() {
+        Assertions.assertTrue(employee.getMiddle_initial().length() == 1);
     }
 }
