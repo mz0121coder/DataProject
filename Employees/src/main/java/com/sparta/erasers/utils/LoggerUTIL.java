@@ -49,10 +49,12 @@ public class LoggerUTIL {
     }
 
     public static void setUpHandlers(Logger logger){
-        setConsoleHandlerLevel(Level.ALL);
+        setConsoleHandlerLevel(Level.WARNING);
         setFileHandlerLevel(Level.ALL);
         setFileHandlerFormatter(new SimpleFormatter());
         setConsoleHandlerFormatter(new CustomFormatter());
+        addConsoleHandler(logger);
+        addFileHandler(logger);
 
     }
 }

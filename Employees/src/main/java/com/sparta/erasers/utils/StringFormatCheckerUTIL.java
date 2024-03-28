@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class StringFormatCheckerUTIL {
     private static final Pattern NAME_PATTERN = Pattern.compile("^[A-Z][a-z]+$");
     private static final Pattern GENDER_PATTERN = Pattern.compile("^[MF]$");
-    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[a-z]+[.][a-z]+@[a-z]+[.][c][o][a-z]{0,1}[.]?[a-z]*?$");
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[a-z]+[.][a-z]+@[a-z]+[.][a-z]{0,3}[.]?[a-z]{0,2}?$");
     private static final Pattern NAME_PREFIX_PATTERN = Pattern.compile("^[MDH][rons]{1,2}[.]$");
     private static final Pattern MIDDLE_INITIAL_PATTERN = Pattern.compile("^[A-Z]$");
     private static final Pattern DATE_PATTERN = Pattern.compile("^[0-9]{1,2}/[0-3]{1}[0-9]/[0-9]{4}$");
