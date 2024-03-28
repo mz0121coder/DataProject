@@ -27,7 +27,7 @@ public class EmployeeCsvReader {
 
         EmployeeCsvReader csvReader = new EmployeeCsvReader();
         ArrayList<Employee> employeeObjectList = new ArrayList<>();
-        employeeObjectList = csvReader.readEmployees("employees_short.csv");
+        employeeObjectList = csvReader.readEmployees("employees.csv");
         System.out.println(employeeObjectList);
     }
 
