@@ -30,7 +30,7 @@ public class StringFormatCheckerTests {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"Mrss.", "mr.", "Dar.", "n.", "", "dr."})
+    @ValueSource(strings = {"Mrsss.", "mr.", "Dar.", "n.", "", "dr."})
     @DisplayName("Given a invalid name prefix, isNamePrefixValid method returns false")
     void givenAInvalidNamePrefix_IsNamePrefixValid_ReturnsFalse(String string) {
         Assertions.assertFalse(StringFormatCheckerUTIL.isNamePrefixValid(string));
