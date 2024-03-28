@@ -19,10 +19,10 @@ public class EmployeeCsvReader {
     private static final Logger LOGGER = Logger.getLogger("EmployeeCsvReaderLogger");
     public static void main(String[] args) {
         //LOGGER
-//        LoggerUTIL.setUpHandlers(LOGGER);
-//        LoggerUTIL.setLoggerLevel(LOGGER, Level.ALL);
-//        LoggerUTIL.addFileHandler(LOGGER);
-//        LoggerUTIL.addConsoleHandler(LOGGER);
+        LoggerUTIL.setUpHandlers(LOGGER);
+        LoggerUTIL.setLoggerLevel(LOGGER, Level.ALL);
+        LoggerUTIL.addFileHandler(LOGGER);
+        LoggerUTIL.addConsoleHandler(LOGGER);
 
 
     // parses a String of Employee information, and constructs and returns an Employee object from it
