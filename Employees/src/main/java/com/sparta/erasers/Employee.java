@@ -3,7 +3,6 @@ package com.sparta.erasers;
 import java.time.LocalDate;
 
 public class Employee {
-
     private int emp_no;
     private LocalDate birth_date;
     private String first_name;
@@ -11,9 +10,7 @@ public class Employee {
     private String email;
     private String gender;
     private LocalDate hire_date;
-
     private int salary;
-
     private String middle_initial;
     private String name_prefix;
 

@@ -10,8 +10,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,91 +21,45 @@ public class EmployeeCsvReader {
     private static final Logger LOGGER = Logger.getLogger("EmployeeCsvReaderLogger");
     public static void main(String[] args) {
         //LOGGER
+        setUpLogger();
+
+        // parses a String of Employee information, and constructs and returns an Employee object from it
+
+        EmployeeCsvReader csvReader = new EmployeeCsvReader();
+        ArrayList<Employee> employeeObjectList = new ArrayList<>();
+        employeeObjectList = csvReader.readEmployees("employees_short.csv");
+        System.out.println(employeeObjectList);
+    }
+
+    private static void setUpLogger() {
         LoggerUTIL.setUpHandlers(LOGGER);
         LoggerUTIL.setLoggerLevel(LOGGER, Level.ALL);
-        LoggerUTIL.addFileHandler(LOGGER);
-        LoggerUTIL.addConsoleHandler(LOGGER);
-
-
-    // parses a String of Employee information, and constructs and returns an Employee object from it
-
-        Path input = Paths.get("src/main/java/com/sparta/erasers/employees_short.csv");
-        Path output = Paths.get("src/main/java/com/sparta/erasers/output.txt");
-        EmployeeCsvReader csvReader = new EmployeeCsvReader();
-        BufferedReader reader = null;
-        try {
-            reader = Files.newBufferedReader(input);
-            //System.out.println(reader.readLine());
-            System.out.println(reader.readLine());
-
-            csvReader.createEmployee(reader.readLine());
-            System.out.println(csvReader.createEmployee(reader.readLine()).getEmail());
-        } catch (IOException e) {
-            System.out.println("Not found.");
-        }
-        System.out.println(csvReader.readFileLines("employees_short.csv").size());
-
-        ArrayList<Employee> empArrList = new ArrayList<>();
-        empArrList = csvReader.readEmployees("employees_short.csv");
-        System.out.println(empArrList.get(1).getEmp_no());
-        System.out.println(empArrList.size());
-
-
     }
 
     public Employee createEmployee(String line) {
         String[] attributes;
         attributes = line.split(",");
 
+        ArrayList<LocalDate> parsedDateAttributes = parseDateAttributes(attributes[7], attributes[8]);
+        int[] parsedIntAttributes = parseIntAttributes(attributes[0], attributes[9]);
 
-
-        //Slightly unneeded variables (Could parse in constructor)
-        LocalDate employeeBirthDate = DateParserUTIL.parseDate(attributes[7]);
-        LocalDate employeeHireDate = DateParserUTIL.parseDate(attributes[8]);
-
-
-        int employeeNumber = IntParserUTIL.parseStringToInt(attributes[0]);
-        int employeeSalary = IntParserUTIL.parseStringToInt(attributes[9]);
-
-        boolean isAttributesValid = validateAttributes(attributes);
-        System.out.println("DETAILS ARE VAILD - " + isAttributesValid);
-
-        Employee employee = new Employee(employeeNumber, attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], employeeBirthDate, employeeHireDate, employeeSalary);
+        Employee employee = new Employee(parsedIntAttributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], parsedDateAttributes.get(0), parsedDateAttributes.get(1), parsedIntAttributes[1]);
 
         //LOGGER.log(Level.INFO, "👔Created employee No: " + employee.getEmp_no());
-        LOGGER.log(Level.INFO, String.format("👔Created employee - \nNo: %s \nTitle: %s\nFirst Name: %s\nMiddle Initial: %s\nLast Name: %s\nGender: %s\nEmail: %s\nBirth Date: %s\nHire date: %s\nSalary: %s", employee.getEmp_no(), employee.getName_prefix(), employee.getFirst_name(), employee.getMiddle_initial(), employee.getLast_name(), employee.getGender(), employee.getEmail(), employee.getBirth_date(), employee.getHire_date(), employee.getSalary()));
+        LOGGER.log(Level.INFO, String.format("👔Created employee object - {No: %s, Title: %s, First Name: %s, Middle Initial: %s, Last Name: %s, Gender: %s, Email: %s, Birth Date: %s, Hire date: %s, Salary: %s}", employee.getEmp_no(), employee.getName_prefix(), employee.getFirst_name(), employee.getMiddle_initial(), employee.getLast_name(), employee.getGender(), employee.getEmail(), employee.getBirth_date(), employee.getHire_date(), employee.getSalary()));
         return employee;
+    }
+
+    private int[] parseIntAttributes(String employeeID, String salary) {
+        return new int[]{IntParserUTIL.parseStringToInt(employeeID), IntParserUTIL.parseStringToInt(salary)};
+    }
+
+    private ArrayList<LocalDate> parseDateAttributes(String birthDate, String hireDate) {
+        return new ArrayList<>(Arrays.asList(DateParserUTIL.parseDate(birthDate), DateParserUTIL.parseDate(hireDate)));
     }
     // The JUnit test should validate that the Employee object contains the correct information
 
-    public Boolean validateAttributes(String[] attributes) {
-        boolean isAttributesValid = true;
-        if (!StringFormatCheckerUTIL.isEmailValid(attributes[6])) {
-            isAttributesValid = false;
-            System.out.println("Email invalid - " + attributes[6]);
-        }
-        if (!StringFormatCheckerUTIL.isGenderValid(attributes[5])) {
-            isAttributesValid = false;
-            System.out.println("Gender invalid - " + attributes[5]);
-        }
-        if (!StringFormatCheckerUTIL.isNameValid(attributes[2])) {
-            isAttributesValid = false;
-            System.out.println("FirstName invalid - " + attributes[2]);
-        }
-        if (!StringFormatCheckerUTIL.isNameValid(attributes[4])) {
-            isAttributesValid = false;
-            System.out.println("LastName invalid - " + attributes[4]);
-        }
-        if (!StringFormatCheckerUTIL.isMiddleInitialValid(attributes[3])) {
-            isAttributesValid = false;
-            System.out.println("MiddleInitial invalid - " + attributes[3]);
-        }
-        if (!StringFormatCheckerUTIL.isNamePrefixValid(attributes[1])) {
-            isAttributesValid = false;
-            System.out.println("NamePrefix invalid - " + attributes[1]);
-        }
-        return isAttributesValid;
-    }
+
 
     // opens and reads a file and returns a ArrayList of Strings, one for each line
     public ArrayList<String>  readFileLines(String fileName) {
@@ -118,13 +74,77 @@ public class EmployeeCsvReader {
             LOGGER.log(Level.INFO, "🟢Started reading lines from file...");
             for (String line = reader.readLine(); line != null; line = reader.readLine()) {
                 LOGGER.log(Level.FINE, "👀Read Line - " + line);
-                fileLines.add(line);
+                if(validateLine(line)) {
+                    fileLines.add(line);
+                } else {
+                    writeInvalidLineToFile(line);
+
+                }
             }
             LOGGER.log(Level.INFO, "🔴Finished Reading.");
         } catch (IOException e) {
             System.out.println("File not found.");
         }
         return fileLines;
+    }
+
+    private void writeInvalidLineToFile(String line) {
+        Path output = Paths.get("src/main/java/com/sparta/erasers/invalidLines");
+        try {
+            Files.write(output, (line + "\n").getBytes(), StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private boolean validateLine(String line) {
+        String[] attributes = line.split(",");
+        if (!StringFormatCheckerUTIL.isEmployeeIDValid(attributes[0])) {
+            logInvalidLine(attributes[0], "Employee ID", line, LOGGER);
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isNamePrefixValid(attributes[1])) {
+            logInvalidLine(attributes[1], "Name Prefix", line, LOGGER);
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isNameValid(attributes[2])) {
+            logInvalidLine(attributes[2], "First Name", line, LOGGER);
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isMiddleInitialValid(attributes[3])) {
+            logInvalidLine(attributes[3], "Middle Initial", line, LOGGER);
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isNameValid(attributes[4])) {
+            logInvalidLine(attributes[4], "Last Name", line, LOGGER);
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isGenderValid(attributes[5])) {
+            logInvalidLine(attributes[5], "Gender", line, LOGGER);
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isEmailValid(attributes[6])) {
+            logInvalidLine(attributes[6], "Email", line, LOGGER);
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isDateValid(attributes[7])) {
+            logInvalidLine(attributes[7], "Birth Date", line, LOGGER);
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isDateValid(attributes[8])) {
+            logInvalidLine(attributes[8], "Hire Date", line, LOGGER);
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isSalaryValid(attributes[9])) {
+            logInvalidLine(attributes[9], "Salary", line, LOGGER);
+            return false;
+        }
+
+        return true;
+    }
+
+    public void logInvalidLine (String attribute, String attributeName, String line, Logger LOGGER) {
+        LOGGER.log(Level.WARNING, "🤦‍♂️ " + attributeName + " invalid - " + attribute + " - line has been skipped \nLine skipped - \"" + line + "\"");
     }
 
 
@@ -137,7 +157,7 @@ public class EmployeeCsvReader {
         for(String s : lineArrList) {
             Employee e = createEmployee(s);
             empArrList.add(e);
-            LOGGER.log(Level.FINE, "👷‍♂️Added Employee: " + e.getEmp_no());
+            LOGGER.log(Level.FINE, "👷‍♂️Added Employee to employee list: " + e.getEmp_no());
         }
         LOGGER.log(Level.INFO, "🔴Done with adding employees to employee list.");
         return empArrList;
