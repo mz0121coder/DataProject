@@ -1,7 +1,9 @@
 package com.sparta.erasers;
 
 import com.sparta.erasers.utils.DateParserUTIL;
+import com.sparta.erasers.utils.IntParserUTIL;
 import com.sparta.erasers.utils.LoggerUTIL;
+import com.sparta.erasers.utils.StringFormatCheckerUTIL;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -50,26 +52,58 @@ public class EmployeeCsvReader {
     }
 
     public Employee createEmployee(String line) {
-
         String[] attributes;
         attributes = line.split(",");
+
+
 
         //Slightly unneeded variables (Could parse in constructor)
         LocalDate employeeBirthDate = DateParserUTIL.parseDate(attributes[7]);
         LocalDate employeeHireDate = DateParserUTIL.parseDate(attributes[8]);
 
-        int employeeNumber1 = Integer.parseInt(attributes[0]);
-        int employeeSalary1 = Integer.parseInt(attributes[9]);
 
+        int employeeNumber = IntParserUTIL.parseStringToInt(attributes[0]);
+        int employeeSalary = IntParserUTIL.parseStringToInt(attributes[9]);
 
+        boolean isAttributesValid = validateAttributes(attributes);
+        System.out.println("DETAILS ARE VAILD - " + isAttributesValid);
 
-        Employee employee = new Employee(employeeNumber1, attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], employeeBirthDate, employeeHireDate, employeeSalary1);
+        Employee employee = new Employee(employeeNumber, attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], employeeBirthDate, employeeHireDate, employeeSalary);
+
         //LOGGER.log(Level.INFO, "👔Created employee No: " + employee.getEmp_no());
         LOGGER.log(Level.INFO, String.format("👔Created employee - \nNo: %s \nTitle: %s\nFirst Name: %s\nMiddle Initial: %s\nLast Name: %s\nGender: %s\nEmail: %s\nBirth Date: %s\nHire date: %s\nSalary: %s", employee.getEmp_no(), employee.getName_prefix(), employee.getFirst_name(), employee.getMiddle_initial(), employee.getLast_name(), employee.getGender(), employee.getEmail(), employee.getBirth_date(), employee.getHire_date(), employee.getSalary()));
         return employee;
     }
     // The JUnit test should validate that the Employee object contains the correct information
 
+    public Boolean validateAttributes(String[] attributes) {
+        boolean isAttributesValid = true;
+        if (!StringFormatCheckerUTIL.isEmailValid(attributes[6])) {
+            isAttributesValid = false;
+            System.out.println("Email invalid - " + attributes[6]);
+        }
+        if (!StringFormatCheckerUTIL.isGenderValid(attributes[5])) {
+            isAttributesValid = false;
+            System.out.println("Gender invalid - " + attributes[5]);
+        }
+        if (!StringFormatCheckerUTIL.isNameValid(attributes[2])) {
+            isAttributesValid = false;
+            System.out.println("FirstName invalid - " + attributes[2]);
+        }
+        if (!StringFormatCheckerUTIL.isNameValid(attributes[4])) {
+            isAttributesValid = false;
+            System.out.println("LastName invalid - " + attributes[4]);
+        }
+        if (!StringFormatCheckerUTIL.isMiddleInitialValid(attributes[3])) {
+            isAttributesValid = false;
+            System.out.println("MiddleInitial invalid - " + attributes[3]);
+        }
+        if (!StringFormatCheckerUTIL.isNamePrefixValid(attributes[1])) {
+            isAttributesValid = false;
+            System.out.println("NamePrefix invalid - " + attributes[1]);
+        }
+        return isAttributesValid;
+    }
 
     // opens and reads a file and returns a ArrayList of Strings, one for each line
     public ArrayList<String>  readFileLines(String fileName) {
