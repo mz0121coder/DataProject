@@ -1,58 +1,293 @@
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
 INFO: 🟢Started reading lines from file...
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
-FINE: 👀Read Line - 1984293,Mrs.,Serafina,I,Bumgarner,F,serafina.bumgarner@exxonmobil.com,9/21/1982,02/01/2008,69294
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
-WARNING: 🤦‍♂️ Employee ID invalid - 1984293 - line has been skipped 
-Line skipped - "1984293,Mrs.,Serafina,I,Bumgarner,F,serafina.bumgarner@exxonmobil.com,9/21/1982,02/01/2008,69294"
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
-FINE: 👀Read Line - 178566,Mr4s.,Juliette,M,Rojo,F,juliette.rojo@yahoo.co.uk,05/08/1967,06/04/2011,193912
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
-WARNING: 🤦‍♂️ Name Prefix invalid - Mr4s. - line has been skipped 
-Line skipped - "178566,Mr4s.,Juliette,M,Rojo,F,juliette.rojo@yahoo.co.uk,05/08/1967,06/04/2011,193912"
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
-FINE: 👀Read Line - 647173,Mr.,Mil2an,F,Krawczyk,M,milan.krawczyk@hotmail.com,04/04/1980,1/19/2012,123681
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
-WARNING: 🤦‍♂️ First Name invalid - Mil2an - line has been skipped 
-Line skipped - "647173,Mr.,Mil2an,F,Krawczyk,M,milan.krawczyk@hotmail.com,04/04/1980,1/19/2012,123681"
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
-FINE: 👀Read Line - 847634,Mr.,Elmer,4R,Jason,M,elmer.jason@yahoo.com,04/09/1996,5/28/2017,93504
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
-WARNING: 🤦‍♂️ Middle Initial invalid - 4R - line has been skipped 
-Line skipped - "847634,Mr.,Elmer,4R,Jason,M,elmer.jason@yahoo.com,04/09/1996,5/28/2017,93504"
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
-FINE: 👀Read Line - 260736,Ms.,Zelda,P,Fo4rest,F,zelda.forest@ibm.com,11/27/1959,1/28/2014,176642
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
-WARNING: 🤦‍♂️ Last Name invalid - Fo4rest - line has been skipped 
-Line skipped - "260736,Ms.,Zelda,P,Fo4rest,F,zelda.forest@ibm.com,11/27/1959,1/28/2014,176642"
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
-FINE: 👀Read Line - 811306,Mr.,Rhett,P,Wan,M2,rhett.wan@hotmail.com,7/14/1976,1/21/2009,59406
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
-WARNING: 🤦‍♂️ Gender invalid - M2 - line has been skipped 
-Line skipped - "811306,Mr.,Rhett,P,Wan,M2,rhett.wan@hotmail.com,7/14/1976,1/21/2009,59406"
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
-FINE: 👀Read Line - 956633,Mr.,Hal,H,Farrow,M,ha4l.farrow@cox.n24,et,3/15/1967,2/25/1991,164580
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
-WARNING: 🤦‍♂️ Email invalid - ha4l.farrow@cox.n24 - line has been skipped 
-Line skipped - "956633,Mr.,Hal,H,Farrow,M,ha4l.farrow@cox.n24,et,3/15/1967,2/25/1991,164580"
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
-FINE: 👀Read Line - 629539,Dr.,Del,I,Fernandez,M,del.fernandez@hotmail.com,8/1343/1991,04/07/2016,138662
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
-WARNING: 🤦‍♂️ Birth Date invalid - 8/1343/1991 - line has been skipped 
-Line skipped - "629539,Dr.,Del,I,Fernandez,M,del.fernandez@hotmail.com,8/1343/1991,04/07/2016,138662"
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
-FINE: 👀Read Line - 784160,Dr.,Corey,A,Jackman,M,corey.jackman@gmail.com,04/12/1959,6/2924/1984,57616
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
-WARNING: 🤦‍♂️ Hire Date invalid - 6/2924/1984 - line has been skipped 
-Line skipped - "784160,Dr.,Corey,A,Jackman,M,corey.jackman@gmail.com,04/12/1959,6/2924/1984,57616"
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
-FINE: 👀Read Line - 744723,Hon.,Bibi,H,Paddock,F,bibi.paddock@yahoo.co.in,10/20/1991,11/02/2016,8722234148
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
-WARNING: 🤦‍♂️ Salary invalid - 8722234148 - line has been skipped 
-Line skipped - "744723,Hon.,Bibi,H,Paddock,F,bibi.paddock@yahoo.co.in,10/20/1991,11/02/2016,8722234148"
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 1984229,Mrs.,Serafina,I,Bumgarner,F,serafina.bumgarner@exxonmobil.com,9/21/1982,02/01/2008,69294
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Employee ID invalid - 1984229 - line has been skipped 
+Line skipped - "1984229,Mrs.,Serafina,I,Bumgarner,F,serafina.bumgarner@exxonmobil.com,9/21/1982,02/01/2008,69294"
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 178566,Mr31s.,Juliette,M,Rojo,F,juliette.rojo@yahoo.co.uk,05/08/1967,06/04/2011,193912
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Name Prefix invalid - Mr31s. - line has been skipped 
+Line skipped - "178566,Mr31s.,Juliette,M,Rojo,F,juliette.rojo@yahoo.co.uk,05/08/1967,06/04/2011,193912"
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 647173,Mr.,Mi31lan,F,Krawczyk,M,milan.14krawczyk@hotmail.com,04/04/1980,1/19/2012,123681
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Mi31lan - line has been skipped 
+Line skipped - "647173,Mr.,Mi31lan,F,Krawczyk,M,milan.14krawczyk@hotmail.com,04/04/1980,1/19/2012,123681"
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 847634,Mr.,Elme14r,R31,Jason,M,elmer.jason@yahoo.com,04/09/1996,5/28/2017,93504
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Elme14r - line has been skipped 
+Line skipped - "847634,Mr.,Elme14r,R31,Jason,M,elmer.jason@yahoo.com,04/09/1996,5/28/2017,93504"
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 260736,Ms.,Zelda,P,Fo3123rest,F,zelda.forest@ibm.com,11/27/1959,1/28/2014,176642
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Last Name invalid - Fo3123rest - line has been skipped 
+Line skipped - "260736,Ms.,Zelda,P,Fo3123rest,F,zelda.forest@ibm.com,11/27/1959,1/28/2014,176642"
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 811306,Mr.,R4hett,P,Wan,M,rhet3123t.wan@hotm41ail.com,7/14/1976,1/21/2009,59406
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - R4hett - line has been skipped 
+Line skipped - "811306,Mr.,R4hett,P,Wan,M,rhet3123t.wan@hotm41ail.com,7/14/1976,1/21/2009,59406"
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 956633,Mr.,Hal,H,Farrow,M,hal.farrow@cox.net,3/15/196317,2/25/1991,164580
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Birth Date invalid - 3/15/196317 - line has been skipped 
+Line skipped - "956633,Mr.,Hal,H,Farrow,M,hal.farrow@cox.net,3/15/196317,2/25/1991,164580"
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 629539,Dr.,Del,I,Fernandez,M,del.fe312rnandez@hotmail.com,8/13/1991,04/07/2016,138662
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Email invalid - del.fe312rnandez@hotmail.com - line has been skipped 
+Line skipped - "629539,Dr.,Del,I,Fernandez,M,del.fe312rnandez@hotmail.com,8/13/1991,04/07/2016,138662"
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 784160,Dr.,Cor12bi,24H,Paddock,F,bibi.14paddock@yahoo.c412o.in,10/20/1991,11/02/2016,87148
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Cor12bi - line has been skipped 
+Line skipped - "784160,Dr.,Cor12bi,24H,Paddock,F,bibi.14paddock@yahoo.c412o.in,10/20/1991,11/02/2016,87148"
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readFileLines
 INFO: 🔴Finished Reading.
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readEmployees
 INFO: 🟢Starting adding employees to employee list...
-Mar 28, 2024 2:51:49 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+Mar 28, 2024 3:07:21 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+INFO: 🔴Done with adding employees to employee list.
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+INFO: 🟢Started reading lines from file...
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 1984229,Mrs.,Serafina,I,Bumgarner,F,serafina.bumgarner@exxonmobil.com,9/21/1982,02/01/2008,69294
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Employee ID invalid - 1984229 - line has been skipped 
+Line skipped - "1984229,Mrs.,Serafina,I,Bumgarner,F,serafina.bumgarner@exxonmobil.com,9/21/1982,02/01/2008,69294"
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 178566,Mr31s.,Juliette,M,Rojo,F,juliette.rojo@yahoo.co.uk,05/08/1967,06/04/2011,193912
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Name Prefix invalid - Mr31s. - line has been skipped 
+Line skipped - "178566,Mr31s.,Juliette,M,Rojo,F,juliette.rojo@yahoo.co.uk,05/08/1967,06/04/2011,193912"
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 647173,Mr.,Mi31lan,F,Krawczyk,M,milan.14krawczyk@hotmail.com,04/04/1980,1/19/2012,123681
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Mi31lan - line has been skipped 
+Line skipped - "647173,Mr.,Mi31lan,F,Krawczyk,M,milan.14krawczyk@hotmail.com,04/04/1980,1/19/2012,123681"
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 847634,Mr.,Elme14r,R31,Jason,M,elmer.jason@yahoo.com,04/09/1996,5/28/2017,93504
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Elme14r - line has been skipped 
+Line skipped - "847634,Mr.,Elme14r,R31,Jason,M,elmer.jason@yahoo.com,04/09/1996,5/28/2017,93504"
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 260736,Ms.,Zelda,P,Fo3123rest,F,zelda.forest@ibm.com,11/27/1959,1/28/2014,176642
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Last Name invalid - Fo3123rest - line has been skipped 
+Line skipped - "260736,Ms.,Zelda,P,Fo3123rest,F,zelda.forest@ibm.com,11/27/1959,1/28/2014,176642"
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 811306,Mr.,R4hett,P,Wan,M,rhet3123t.wan@hotm41ail.com,7/14/1976,1/21/2009,59406
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - R4hett - line has been skipped 
+Line skipped - "811306,Mr.,R4hett,P,Wan,M,rhet3123t.wan@hotm41ail.com,7/14/1976,1/21/2009,59406"
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 956633,Mr.,Hal,H,Farrow,M,hal.farrow@cox.net,3/15/196317,2/25/1991,164580
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Birth Date invalid - 3/15/196317 - line has been skipped 
+Line skipped - "956633,Mr.,Hal,H,Farrow,M,hal.farrow@cox.net,3/15/196317,2/25/1991,164580"
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 629539,Dr.,Del,I,Fernandez,M,del.fe312rnandez@hotmail.com,8/13/1991,04/07/2016,138662
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Email invalid - del.fe312rnandez@hotmail.com - line has been skipped 
+Line skipped - "629539,Dr.,Del,I,Fernandez,M,del.fe312rnandez@hotmail.com,8/13/1991,04/07/2016,138662"
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 784160,Dr.,Cor12bi,24H,Paddock,F,bibi.14paddock@yahoo.c412o.in,10/20/1991,11/02/2016,87148
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Cor12bi - line has been skipped 
+Line skipped - "784160,Dr.,Cor12bi,24H,Paddock,F,bibi.14paddock@yahoo.c412o.in,10/20/1991,11/02/2016,87148"
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+INFO: 🔴Finished Reading.
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+INFO: 🟢Starting adding employees to employee list...
+Mar 28, 2024 3:12:23 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+INFO: 🔴Done with adding employees to employee list.
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+INFO: 🟢Started reading lines from file...
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 1984229,Mrs.,Serafina,I,Bumgarner,F,serafina.bumgarner@exxonmobil.com,9/21/1982,02/01/2008,69294
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Employee ID invalid - 1984229 - line has been skipped 
+Line skipped - "1984229,Mrs.,Serafina,I,Bumgarner,F,serafina.bumgarner@exxonmobil.com,9/21/1982,02/01/2008,69294"
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 178566,Mr31s.,Juliette,M,Rojo,F,juliette.rojo@yahoo.co.uk,05/08/1967,06/04/2011,193912
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Name Prefix invalid - Mr31s. - line has been skipped 
+Line skipped - "178566,Mr31s.,Juliette,M,Rojo,F,juliette.rojo@yahoo.co.uk,05/08/1967,06/04/2011,193912"
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 647173,Mr.,Mi31lan,F,Krawczyk,M,milan.14krawczyk@hotmail.com,04/04/1980,1/19/2012,123681
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Mi31lan - line has been skipped 
+Line skipped - "647173,Mr.,Mi31lan,F,Krawczyk,M,milan.14krawczyk@hotmail.com,04/04/1980,1/19/2012,123681"
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 847634,Mr.,Elme14r,R31,Jason,M,elmer.jason@yahoo.com,04/09/1996,5/28/2017,93504
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Elme14r - line has been skipped 
+Line skipped - "847634,Mr.,Elme14r,R31,Jason,M,elmer.jason@yahoo.com,04/09/1996,5/28/2017,93504"
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 260736,Ms.,Zelda,P,Fo3123rest,F,zelda.forest@ibm.com,11/27/1959,1/28/2014,176642
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Last Name invalid - Fo3123rest - line has been skipped 
+Line skipped - "260736,Ms.,Zelda,P,Fo3123rest,F,zelda.forest@ibm.com,11/27/1959,1/28/2014,176642"
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 811306,Mr.,R4hett,P,Wan,M,rhet3123t.wan@hotm41ail.com,7/14/1976,1/21/2009,59406
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - R4hett - line has been skipped 
+Line skipped - "811306,Mr.,R4hett,P,Wan,M,rhet3123t.wan@hotm41ail.com,7/14/1976,1/21/2009,59406"
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 956633,Mr.,Hal,H,Farrow,M,hal.farrow@cox.net,3/15/196317,2/25/1991,164580
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Birth Date invalid - 3/15/196317 - line has been skipped 
+Line skipped - "956633,Mr.,Hal,H,Farrow,M,hal.farrow@cox.net,3/15/196317,2/25/1991,164580"
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 629539,Dr.,Del,I,Fernandez,M,del.fe312rnandez@hotmail.com,8/13/1991,04/07/2016,138662
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ Email invalid - del.fe312rnandez@hotmail.com - line has been skipped 
+Line skipped - "629539,Dr.,Del,I,Fernandez,M,del.fe312rnandez@hotmail.com,8/13/1991,04/07/2016,138662"
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 784160,Dr.,Cor12bi,24H,Paddock,F,bibi.14paddock@yahoo.c412o.in,10/20/1991,11/02/2016,87148
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Cor12bi - line has been skipped 
+Line skipped - "784160,Dr.,Cor12bi,24H,Paddock,F,bibi.14paddock@yahoo.c412o.in,10/20/1991,11/02/2016,87148"
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+INFO: 🔴Finished Reading.
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+INFO: 🟢Starting adding employees to employee list...
+Mar 28, 2024 3:12:37 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+INFO: 🔴Done with adding employees to employee list.
+Mar 28, 2024 3:13:42 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+INFO: 🟢Started reading lines from file...
+Mar 28, 2024 3:13:42 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 198429,Mrs.,Serafina,I,Bumgarner,F,serafina.bumgarner@exxonmobil.com,9/21/1982,02/01/2008,69294
+Mar 28, 2024 3:13:42 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 178566,Mrs.,Juliette,M,Rojo,F,juliette.rojo@yahoo.co.uk,05/08/1967,06/04/2011,193912
+Mar 28, 2024 3:13:42 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 647173,Mr.,Milan,F,Krawczyk,M,milan.krawczyk@hotmail.com,04/04/1980,1/19/2012,123681
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 847634,Mr.,Elmer,R,Jason,M,elmer.jason@yahoo.com,04/09/1996,5/28/2017,93504
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 260736,Ms.,Zelda,P,Forest,F,zelda.forest@ibm.com,11/27/1959,1/28/2014,176642
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 811306,Mr.,Rhdasd 12`3121234ett,P,Wan,M,rhett.wan@hotmail.com,7/14/1976,1/21/2009,59406
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Rhdasd 12`3121234ett - line has been skipped 
+Line skipped - "811306,Mr.,Rhdasd 12`3121234ett,P,Wan,M,rhett.wan@hotmail.com,7/14/1976,1/21/2009,59406"
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 956633,Mr.,Hal,H,Farrow,M,hal.farrow@cox.net,3/15/1967,2/25/1991,164580
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 629539,Dr.,Del,I,Fernandez,M,del.fernandez@hotmail.com,8/13/1991,04/07/2016,138662
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 784160,Dr.,Corey,A,Jackman,M,corey.jackman@gmail.com,04/12/1959,6/29/1984,57616
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 744723,Hon.,Bibi,H,Paddock,F,bibi.paddock@yahoo.co.in,10/20/1991,11/02/2016,87148
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+INFO: 🔴Finished Reading.
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+INFO: 🟢Starting adding employees to employee list...
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 198429, Title: Mrs., First Name: Serafina, Middle Initial: I, Last Name: Bumgarner, Gender: F, Email: serafina.bumgarner@exxonmobil.com, Birth Date: 1982-09-21, Hire date: 2008-02-01, Salary: 69294}
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 198429
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 178566, Title: Mrs., First Name: Juliette, Middle Initial: M, Last Name: Rojo, Gender: F, Email: juliette.rojo@yahoo.co.uk, Birth Date: 1967-05-08, Hire date: 2011-06-04, Salary: 193912}
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 178566
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 647173, Title: Mr., First Name: Milan, Middle Initial: F, Last Name: Krawczyk, Gender: M, Email: milan.krawczyk@hotmail.com, Birth Date: 1980-04-04, Hire date: 2012-01-19, Salary: 123681}
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 647173
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 847634, Title: Mr., First Name: Elmer, Middle Initial: R, Last Name: Jason, Gender: M, Email: elmer.jason@yahoo.com, Birth Date: 1996-04-09, Hire date: 2017-05-28, Salary: 93504}
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 847634
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 260736, Title: Ms., First Name: Zelda, Middle Initial: P, Last Name: Forest, Gender: F, Email: zelda.forest@ibm.com, Birth Date: 1959-11-27, Hire date: 2014-01-28, Salary: 176642}
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 260736
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 956633, Title: Mr., First Name: Hal, Middle Initial: H, Last Name: Farrow, Gender: M, Email: hal.farrow@cox.net, Birth Date: 1967-03-15, Hire date: 1991-02-25, Salary: 164580}
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 956633
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 629539, Title: Dr., First Name: Del, Middle Initial: I, Last Name: Fernandez, Gender: M, Email: del.fernandez@hotmail.com, Birth Date: 1991-08-13, Hire date: 2016-04-07, Salary: 138662}
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 629539
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 784160, Title: Dr., First Name: Corey, Middle Initial: A, Last Name: Jackman, Gender: M, Email: corey.jackman@gmail.com, Birth Date: 1959-04-12, Hire date: 1984-06-29, Salary: 57616}
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 784160
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 744723, Title: Hon., First Name: Bibi, Middle Initial: H, Last Name: Paddock, Gender: F, Email: bibi.paddock@yahoo.co.in, Birth Date: 1991-10-20, Hire date: 2016-11-02, Salary: 87148}
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 744723
+Mar 28, 2024 3:13:43 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+INFO: 🔴Done with adding employees to employee list.
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+INFO: 🟢Started reading lines from file...
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 198429,Mrs.,Serafina,I,Bumgarner,F,serafina.bumgarner@exxonmobil.com,9/21/1982,02/01/2008,69294
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 178566,Mrs.,Juliette,M,Rojo,F,juliette.rojo@yahoo.co.uk,05/08/1967,06/04/2011,193912
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 647173,Mr.,Milan,F,Krawczyk,M,milan.krawczyk@hotmail.com,04/04/1980,1/19/2012,123681
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 847634,Mr.,Elmer,R,Jason,M,elmer.jason@yahoo.com,04/09/1996,5/28/2017,93504
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 260736,Ms.,Zelda,P,Forest,F,zelda.forest@ibm.com,11/27/1959,1/28/2014,176642
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 811306,Mr.,Rhdasd 12`3121234ett,P,Wan,M,rhett.wan@hotmail.com,7/14/1976,1/21/2009,59406
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader logInvalidLine
+WARNING: 🤦‍♂️ First Name invalid - Rhdasd 12`3121234ett - line has been skipped 
+Line skipped - "811306,Mr.,Rhdasd 12`3121234ett,P,Wan,M,rhett.wan@hotmail.com,7/14/1976,1/21/2009,59406"
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 956633,Mr.,Hal,H,Farrow,M,hal.farrow@cox.net,3/15/1967,2/25/1991,164580
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 629539,Dr.,Del,I,Fernandez,M,del.fernandez@hotmail.com,8/13/1991,04/07/2016,138662
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 784160,Dr.,Corey,A,Jackman,M,corey.jackman@gmail.com,04/12/1959,6/29/1984,57616
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+FINE: 👀Read Line - 744723,Hon.,Bibi,H,Paddock,F,bibi.paddock@yahoo.co.in,10/20/1991,11/02/2016,87148
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readFileLines
+INFO: 🔴Finished Reading.
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+INFO: 🟢Starting adding employees to employee list...
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 198429, Title: Mrs., First Name: Serafina, Middle Initial: I, Last Name: Bumgarner, Gender: F, Email: serafina.bumgarner@exxonmobil.com, Birth Date: 1982-09-21, Hire date: 2008-02-01, Salary: 69294}
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 198429
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 178566, Title: Mrs., First Name: Juliette, Middle Initial: M, Last Name: Rojo, Gender: F, Email: juliette.rojo@yahoo.co.uk, Birth Date: 1967-05-08, Hire date: 2011-06-04, Salary: 193912}
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 178566
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 647173, Title: Mr., First Name: Milan, Middle Initial: F, Last Name: Krawczyk, Gender: M, Email: milan.krawczyk@hotmail.com, Birth Date: 1980-04-04, Hire date: 2012-01-19, Salary: 123681}
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 647173
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 847634, Title: Mr., First Name: Elmer, Middle Initial: R, Last Name: Jason, Gender: M, Email: elmer.jason@yahoo.com, Birth Date: 1996-04-09, Hire date: 2017-05-28, Salary: 93504}
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 847634
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 260736, Title: Ms., First Name: Zelda, Middle Initial: P, Last Name: Forest, Gender: F, Email: zelda.forest@ibm.com, Birth Date: 1959-11-27, Hire date: 2014-01-28, Salary: 176642}
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 260736
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 956633, Title: Mr., First Name: Hal, Middle Initial: H, Last Name: Farrow, Gender: M, Email: hal.farrow@cox.net, Birth Date: 1967-03-15, Hire date: 1991-02-25, Salary: 164580}
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 956633
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 629539, Title: Dr., First Name: Del, Middle Initial: I, Last Name: Fernandez, Gender: M, Email: del.fernandez@hotmail.com, Birth Date: 1991-08-13, Hire date: 2016-04-07, Salary: 138662}
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 629539
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 784160, Title: Dr., First Name: Corey, Middle Initial: A, Last Name: Jackman, Gender: M, Email: corey.jackman@gmail.com, Birth Date: 1959-04-12, Hire date: 1984-06-29, Salary: 57616}
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 784160
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader createEmployee
+INFO: 👔Created employee object - {No: 744723, Title: Hon., First Name: Bibi, Middle Initial: H, Last Name: Paddock, Gender: F, Email: bibi.paddock@yahoo.co.in, Birth Date: 1991-10-20, Hire date: 2016-11-02, Salary: 87148}
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
+FINE: 👷‍♂️Added Employee to employee list: 744723
+Mar 28, 2024 3:13:47 PM com.sparta.erasers.EmployeeCsvReader readEmployees
 INFO: 🔴Done with adding employees to employee list.

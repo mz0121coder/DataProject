@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -72,6 +73,9 @@ public class EmployeeCsvReader {
                 LOGGER.log(Level.FINE, "👀Read Line - " + line);
                 if(validateLine(line)) {
                     fileLines.add(line);
+                } else {
+                    writeInvalidLineToFile(line);
+
                 }
             }
             LOGGER.log(Level.INFO, "🔴Finished Reading.");
@@ -79,6 +83,15 @@ public class EmployeeCsvReader {
             System.out.println("File not found.");
         }
         return fileLines;
+    }
+
+    private void writeInvalidLineToFile(String line) {
+        Path output = Paths.get("src/main/java/com/sparta/erasers/invalidLines");
+        try {
+            Files.write(output, (line + "\n").getBytes(), StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private boolean validateLine(String line) {
