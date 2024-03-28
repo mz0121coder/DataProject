@@ -13,6 +13,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,20 +40,22 @@ public class EmployeeCsvReader {
         String[] attributes;
         attributes = line.split(",");
 
-        //Parse String dates to Local dates
-        LocalDate employeeBirthDate = DateParserUTIL.parseDate(attributes[7]);
-        LocalDate employeeHireDate = DateParserUTIL.parseDate(attributes[8]);
+        ArrayList<LocalDate> parsedDateAttributes = parseDateAttributes(attributes[7], attributes[8]);
+        int[] parsedIntAttributes = parseIntAttributes(attributes[0], attributes[9]);
 
-        //Parse String ID & Salary to ints
-        int employeeNumber = IntParserUTIL.parseStringToInt(attributes[0]);
-        int employeeSalary = IntParserUTIL.parseStringToInt(attributes[9]);
-
-
-        Employee employee = new Employee(employeeNumber, attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], employeeBirthDate, employeeHireDate, employeeSalary);
+        Employee employee = new Employee(parsedIntAttributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], parsedDateAttributes.get(0), parsedDateAttributes.get(1), parsedIntAttributes[1]);
 
         //LOGGER.log(Level.INFO, "👔Created employee No: " + employee.getEmp_no());
         LOGGER.log(Level.INFO, String.format("👔Created employee object - {No: %s, Title: %s, First Name: %s, Middle Initial: %s, Last Name: %s, Gender: %s, Email: %s, Birth Date: %s, Hire date: %s, Salary: %s}", employee.getEmp_no(), employee.getName_prefix(), employee.getFirst_name(), employee.getMiddle_initial(), employee.getLast_name(), employee.getGender(), employee.getEmail(), employee.getBirth_date(), employee.getHire_date(), employee.getSalary()));
         return employee;
+    }
+
+    private int[] parseIntAttributes(String employeeID, String salary) {
+        return new int[]{IntParserUTIL.parseStringToInt(employeeID), IntParserUTIL.parseStringToInt(salary)};
+    }
+
+    private ArrayList<LocalDate> parseDateAttributes(String birthDate, String hireDate) {
+        return new ArrayList<>(Arrays.asList(DateParserUTIL.parseDate(birthDate), DateParserUTIL.parseDate(hireDate)));
     }
     // The JUnit test should validate that the Employee object contains the correct information
 
