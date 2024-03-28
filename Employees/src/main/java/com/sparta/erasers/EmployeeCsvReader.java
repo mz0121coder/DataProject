@@ -55,18 +55,14 @@ public class EmployeeCsvReader {
         String[] attributes;
         attributes = line.split(",");
 
-
-
-        //Slightly unneeded variables (Could parse in constructor)
+        //Parse String dates to Local dates
         LocalDate employeeBirthDate = DateParserUTIL.parseDate(attributes[7]);
         LocalDate employeeHireDate = DateParserUTIL.parseDate(attributes[8]);
 
-
+        //Parse String ID & Salary to ints
         int employeeNumber = IntParserUTIL.parseStringToInt(attributes[0]);
         int employeeSalary = IntParserUTIL.parseStringToInt(attributes[9]);
 
-        boolean isAttributesValid = validateAttributes(attributes);
-        System.out.println("DETAILS ARE VAILD - " + isAttributesValid);
 
         Employee employee = new Employee(employeeNumber, attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], attributes[6], employeeBirthDate, employeeHireDate, employeeSalary);
 
@@ -76,34 +72,7 @@ public class EmployeeCsvReader {
     }
     // The JUnit test should validate that the Employee object contains the correct information
 
-    public Boolean validateAttributes(String[] attributes) {
-        boolean isAttributesValid = true;
-        if (!StringFormatCheckerUTIL.isEmailValid(attributes[6])) {
-            isAttributesValid = false;
-            System.out.println("Email invalid - " + attributes[6]);
-        }
-        if (!StringFormatCheckerUTIL.isGenderValid(attributes[5])) {
-            isAttributesValid = false;
-            System.out.println("Gender invalid - " + attributes[5]);
-        }
-        if (!StringFormatCheckerUTIL.isNameValid(attributes[2])) {
-            isAttributesValid = false;
-            System.out.println("FirstName invalid - " + attributes[2]);
-        }
-        if (!StringFormatCheckerUTIL.isNameValid(attributes[4])) {
-            isAttributesValid = false;
-            System.out.println("LastName invalid - " + attributes[4]);
-        }
-        if (!StringFormatCheckerUTIL.isMiddleInitialValid(attributes[3])) {
-            isAttributesValid = false;
-            System.out.println("MiddleInitial invalid - " + attributes[3]);
-        }
-        if (!StringFormatCheckerUTIL.isNamePrefixValid(attributes[1])) {
-            isAttributesValid = false;
-            System.out.println("NamePrefix invalid - " + attributes[1]);
-        }
-        return isAttributesValid;
-    }
+
 
     // opens and reads a file and returns a ArrayList of Strings, one for each line
     public ArrayList<String>  readFileLines(String fileName) {
@@ -118,13 +87,51 @@ public class EmployeeCsvReader {
             LOGGER.log(Level.INFO, "🟢Started reading lines from file...");
             for (String line = reader.readLine(); line != null; line = reader.readLine()) {
                 LOGGER.log(Level.FINE, "👀Read Line - " + line);
-                fileLines.add(line);
+                if(validateLine(line)) {
+                    fileLines.add(line);
+                }
             }
             LOGGER.log(Level.INFO, "🔴Finished Reading.");
         } catch (IOException e) {
             System.out.println("File not found.");
         }
         return fileLines;
+    }
+
+    private boolean validateLine(String line) {
+        String[] attributes = line.split(",");
+        if (!StringFormatCheckerUTIL.isEmployeeIDValid(attributes[0])) {
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isNamePrefixValid(attributes[1])) {
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isNameValid(attributes[2])) {
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isMiddleInitialValid(attributes[3])) {
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isNameValid(attributes[4])) {
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isGenderValid(attributes[5])) {
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isEmailValid(attributes[6])) {
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isDateValid(attributes[7])) {
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isDateValid(attributes[8])) {
+            return false;
+        }
+        if (!StringFormatCheckerUTIL.isSalaryValid(attributes[9])) {
+            return false;
+        }
+
+        return true;
     }
 
 
