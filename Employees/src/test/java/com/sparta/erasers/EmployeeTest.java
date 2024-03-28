@@ -54,23 +54,30 @@ class EmployeeTest {
     }
 
     @Test
+    @DisplayName("checks if email is returned")
     void getEmail() {
+        Assertions.assertEquals(employee.getEmail(), "serafina.bumgarner@exxonmobil.com");
     }
 
     @Test
+    @DisplayName("Checks if Gender is returned")
     void getGender() {
+        Assertions.assertEquals(employee.getGender(), "F");
     }
 
     @Test
     void getHire_date() {
+        Assertions.assertEquals(employee.getHire_date(), LocalDate.of(2008,2,1));
     }
 
     @Test
     void getName_prefix() {
+        Assertions.assertEquals(employee.getName_prefix(), "Mrs.");
     }
 
     @Test
     void getSalary() {
+        Assertions.assertEquals(employee.getSalary(), 69294);
     }
 
     @Test
